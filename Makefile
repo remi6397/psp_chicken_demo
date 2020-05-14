@@ -1,14 +1,14 @@
 TARGET = ChickenDemo
 OBJS = main.o game.o
 
-INCDIR = ../chicken-core
+INCDIR = $(CHICKEN_PSP_PATH)
 CFLAGS = -O2 -G0 -Wall -Wl,-emain
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS)
 
 LIBS = -lchicken -lm -lpspdebug
 
-LIBDIR = ../chicken-core
+LIBDIR = $(CHICKEN_PSP_PATH)
 LDFLAGS =
 
 SCM_FILES = $(wildcard *.scm)
