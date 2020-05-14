@@ -12,9 +12,9 @@ Build
    ```sh
    make clean && make CHICKEN_PSP_PATH=../chicken-core-psp
    ```
-   Replace ``../chicken-core-psp`` with the actual directory you setup libchicken.a in.
+   Replace ``../chicken-core-psp`` with the actual directory you setup ``libchicken.a`` in.
 
 Status
 ------
 
-I should consult whether intercepting ``.o`` files from ``csc`` and then linking them with ``psp-gcc`` is appropriate in my case. The optimal way would be to use ``csc`` throughout the whole compilation process with ``-host`` flag if possible at all.
+I should consult with someone more familiarized with CHICKEN whether intercepting ``.o`` files from ``csc`` and then linking them with ``psp-gcc`` is appropriate in my case. The optimal way would be to use ``csc`` throughout the whole compilation process with ``-host`` flag if possible at all.
