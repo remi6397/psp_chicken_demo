@@ -7,8 +7,6 @@ C_FILES    = main.c
 SCM_FILES  = $(wildcard *.scm)
 OBJS       =
 
-CHICKEN_PATH ?= ../chicken-core
-
 C_PREFIX = psp
 CSC      = $(C_PREFIX)csc
 STRIP    = psp-strip
@@ -23,8 +21,9 @@ PSPSDK_LIBS = -lpspdebug -lpspdisplay -lpspge -lpspctrl -lpspsdk
 #			-lpspuser -lpspkernel
 LDFLAGS = $(LIBS)
 
-INCDIR   := $(CHICKEN_PATH) . $(PSPSDK)/include $(PSPPREFIX)/include 
-LIBDIR   := $(CHICKEN_PATH) . $(PSPSDK)/lib $(PSPPREFIX)/lib
+C_INCDIR  = $(PSPPREFIX)/include/chicken
+INCDIR = . $(PSPSDK)/include $(PSPPREFIX)/include $(C_INCDIR)
+LIBDIR = . $(PSPSDK)/lib $(PSPPREFIX)/lib
 
 CFLAGS   = -G0
 CSCFLAGS = -O2 $(addprefix -I,$(INCDIR)) $(addprefix -L,$(LIBDIR)) $(addprefix -C ,$(CFLAGS)) $(addprefix -L ,$(LDFLAGS)) $(CSCEXTRAS)
