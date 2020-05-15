@@ -14,7 +14,10 @@
   scheme
   chicken.platform)
 
-(debug-screen-init)
 (debug-screen-printf "Hello from CHICKEN Scheme  (\")>\n")
+
+(let loop ()
+        (unless (done?)
+          (loop)))
 
 (return-to-host)

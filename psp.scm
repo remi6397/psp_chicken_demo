@@ -19,7 +19,12 @@
 #include <pspkernel.h>
 #include <pspdebug.h>
 
+int IsDone();
+
 <#
+
+(define done?
+  (foreign-lambda bool "IsDone"))
 
 (define debug-screen-init
   (foreign-lambda void "pspDebugScreenInit"))
