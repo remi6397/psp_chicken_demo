@@ -1,4 +1,6 @@
-/* To the extent possible under law, the person who associated CC0 with
+/* main.c -- demo program entry point
+ *
+ * To the extent possible under law, the person who associated CC0 with
  * this project has waived all copyright and related or neighboring rights
  * to this project.
  *

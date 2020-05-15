@@ -38,7 +38,7 @@ PSP_EBOOT = EBOOT.PBP
 
 all: $(EXTRA_TARGETS) $(PSP_EBOOT)
 
-$(PSP_EBOOT_SFO): 
+$(PSP_EBOOT_SFO):
 	$(MKSFO) '$(PSP_EBOOT_TITLE)' $@
 
 $(PSP_EBOOT): $(TARGET).elf $(PSP_EBOOT_SFO)
@@ -54,7 +54,7 @@ $(TARGET).elf: $(C_FILES) $(SCM_FILES)
 
 EXTRA_CLEAN = $(SCM_FILES:.scm=.link)
 
-clean: 
+clean:
 	-rm -f $(TARGET)_strip.elf $(TARGET).elf $(TARGET).link $(EXTRA_CLEAN) $(PSP_EBOOT_SFO) $(PSP_EBOOT) $(EXTRA_TARGETS)
 
 rebuild: clean all

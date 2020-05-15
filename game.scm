@@ -17,7 +17,7 @@
 (debug-screen-printf "Hello from CHICKEN Scheme  (\")>\n")
 
 (let loop ()
-        (unless (done?)
-          (loop)))
+  (unless (done?)
+    (loop)))
 
 (return-to-host)
