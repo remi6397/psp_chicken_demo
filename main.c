@@ -1,17 +1,21 @@
+/* To the extent possible under law, the person who associated CC0 with
+ * this project has waived all copyright and related or neighboring rights
+ * to this project.
+ *
+ * You should have received a copy of the CC0 legalcode along with this
+ * work.  If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. */
+
 #include <pspkernel.h>
 #include <pspdebug.h>
 
-#include <chicken.h>
-
-#define PROGNAME "ChickenDemo"
-
-PSP_MODULE_INFO(PROGNAME, 0, 1, 1);
+PSP_MODULE_INFO("ChickenDemo", 0, 1, 1);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER | THREAD_ATTR_VFPU);
 
 /* Exit callback */
 int exit_callback(int arg1, int arg2, void *common)
 {
 	sceKernelExitGame();
+
 	return 0;
 }
 
@@ -33,7 +37,7 @@ int SetupCallbacks(void)
 {
 	int thid = 0;
 
-	thid = sceKernelCreateThread("update_thread", CallbackThread, 0x11, 0xFA0, 0, 0);
+	thid = sceKernelCreateThread("update_thread", CallbackThread, 0x11, 0xFA0, THREAD_ATTR_USER, 0);
 	if(thid >= 0)
 	{
 		sceKernelStartThread(thid, 0, 0);
@@ -42,12 +46,11 @@ int SetupCallbacks(void)
 	return thid;
 }
 
+#include <chicken.h>
 
-int main(int argc, char *argv[]) {
+int main(void)
+{
 	SetupCallbacks();
-	pspDebugScreenInit();
-	// pspDebugInstallErrorHandler crashes on my PSP
-	//...
 
 	CHICKEN_run(C_toplevel);
 
