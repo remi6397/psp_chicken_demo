@@ -1,7 +1,7 @@
 PSP CHICKEN Scheme Demo
 =======================
 
-Make PSP games in Scheme, just like Naughty Dog does!
+> Make PSP games in Scheme, just like Naughty Dog does!
 
 Build
 -----
