@@ -16,9 +16,6 @@ FIXUP    = psp-fixup-imports
 ENC      = PrxEncrypter
 
 PSPSDK_LIBS = -lpspdebug -lpspdisplay -lpspge -lpspctrl -lpspsdk
-#LIBS = $(PSPSDK_LIBS) -lc -lm -lpspnet \
-#			-lpspnet_inet -lpspnet_apctl -lpspnet_resolver -lpsputility \
-#			-lpspuser -lpspkernel
 LDFLAGS = $(LIBS)
 
 C_INCDIR  = $(PSPPREFIX)/include/chicken
